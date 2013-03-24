@@ -3,9 +3,10 @@ source "https://rubygems.org"
 gem "eventmachine"
 gem "eventmachine_httpserver"
 
-group :development do
+group :test do
   gem "rspec"
   gem "evented-spec"
+  gem 'coveralls', :require => false
 end
 
 group :development do

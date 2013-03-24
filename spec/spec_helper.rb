@@ -1,6 +1,9 @@
 require 'eventmachine'
 require 'evented-spec'
 
+require 'coveralls'
+Coveralls.wear!
+
 $:.push File.expand_path("../../lib", __FILE__)
 
 require 'sock_puppet'
