@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "eventmachine"
 gem "eventmachine_httpserver"
+gem "puppet"
 
 group :test do
   gem "rspec"

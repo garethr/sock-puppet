@@ -13,6 +13,7 @@ GEM
     evented-spec (0.9.0)
     eventmachine (1.0.3)
     eventmachine_httpserver (0.2.1)
+    facter (1.6.18)
     ffi (1.5.0)
     guard (1.6.2)
       listen (>= 0.6.0)
@@ -23,6 +24,9 @@ GEM
     guard-rspec (2.5.1)
       guard (>= 1.1)
       rspec (~> 2.11)
+    hiera (1.1.2)
+      json_pure
+    json_pure (1.7.7)
     listen (0.7.3)
     lumberjack (1.0.3)
     method_source (0.8.1)
@@ -32,6 +36,9 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    puppet (3.1.1)
+      facter (~> 1.6)
+      hiera (~> 1.0)
     rake (10.0.3)
     rb-inotify (0.9.0)
       ffi (>= 0.5.0)
@@ -62,6 +69,7 @@ DEPENDENCIES
   eventmachine
   eventmachine_httpserver
   guard-rspec
+  puppet
   rake
   rb-inotify
   rspec
