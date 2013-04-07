@@ -11,4 +11,7 @@ require 'sock_puppet/send_server'
 
 class SockPuppet
   MAX_QUEUE_SIZE = 5
+  HOST = "127.0.0.1"
+  SEND_PORT = 9081
+  RECEIVE_PORT = 9082
 end
