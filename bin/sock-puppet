@@ -14,4 +14,8 @@ EM.run {
 
   EventMachine::start_server "127.0.0.1", 8081, SendServer, queue
   EventMachine::start_server "127.0.0.1", 8082, HttpReceiveServer, queue
+  EventMachine.add_periodic_timer(1) { 
+    puts queue.size
+    queue.pop { |msg| puts "shorten queue" } if queue.size > SockPuppet::MAX_QUEUE_SIZE
+  }
 }

@@ -1,10 +1,13 @@
+require 'yaml'
+
 class SendServer < EM::Connection
   attr_reader :queue
 
   def initialize(queue)
 
     callback = Proc.new do |msg|
-      send_data("#{msg}\n")
+      out = YAML.load(msg)
+      send_data("Host: #{out.host}\nStatus: #{out.status}\nMetrics: #{out.metrics}\n")
       queue.pop &callback
     end
 

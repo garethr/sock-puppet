@@ -4,7 +4,6 @@ class HttpReceiveServer < EventMachine::Connection
   include EventMachine::HttpServer
   attr_reader :queue
 
-
   def initialize(queue)
     @queue = queue
   end
@@ -19,7 +18,7 @@ class HttpReceiveServer < EventMachine::Connection
 
     # Callback block to execute once the request is fulfilled
     callback = proc do |r|
-      @queue.push(@http_request_uri)
+      @queue.push(@http_post_content)
       resp.send_response
     end
 
